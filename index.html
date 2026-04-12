@@ -3,10 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TV Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="js/main.js" defer></script>
+    <title>Chart TV</title>
 </head>
 <body>
-    <header></header>
+    <header class="header">
+        <img class="header__menu" src="img/icons/menu.svg" alt="Menu">
+        <div class="header__logo">
+            <img class="header__logo__img" src="img/logos/isotype.webp" alt="Isotype">
+            <p class="header__logo__txt">Chart TV</p>
+        </div>
+        <div class="header__searchbar">
+            <input type="text" id="shows-search" placeholder="Search for Shows">
+            <img class="header__searchbar__search" src="img/icons/search.svg" alt="Search Icon">
+        </div>
+    </header>
     <main></main>
     <footer></footer>
 </body>
