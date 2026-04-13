@@ -1,3 +1,78 @@
 @use "./variables" as v;
 @use "./mixins" as m;
 @use "./extends" as e;
+
+.tvShowCard {
+    max-width: 480px;
+    border: 1px solid v.$silverMist;
+    border-radius: 12px;
+    overflow: hidden;
+
+    &__header {
+        display: flex;
+        gap: 1rem;
+        padding: 20px;
+
+        &__img {
+            width: 80px;
+            height: 112px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        &__info {
+            display: flex;
+            flex-direction: column;
+            gap: .3rem;
+
+            &__name {
+                margin: 0;
+                font-family: v.$titleFont;
+            }
+
+            &__genres {
+                display: flex;
+                gap: .5rem;
+                flex-wrap: wrap;
+                margin: 0;
+
+                &__genre {
+                    background-color: v.$sageMuted;
+                    color: v.$ivoryWarm;
+                    font-size: .75rem;
+                    padding: 2px 8px;
+                    border-radius: 6px;
+                    margin: 4px 0;
+                }
+            }
+
+            &__subinfo {
+                display: flex;
+                flex-direction: row;
+                justify-content: left;
+                gap: 1rem;
+
+                &__channel, &__year {
+                    margin: 0;
+                    font-size: .8rem;
+                    color: v.$ashGray;
+                }
+            }
+
+            &__rating {
+                margin: 0;
+                font-size: .9rem;
+            }
+        }
+    }
+
+    &__description {
+        border-top: 1px solid v.$silverMist;
+        padding: 16px 20px;
+
+        &__txt {
+            margin: 0;
+            font-size: .75rem;
+        }
+    }
+}

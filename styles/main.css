@@ -1,3 +1,68 @@
+.tvShowCard {
+  max-width: 480px;
+  border: 1px solid #C2CDD5;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.tvShowCard__header {
+  display: flex;
+  gap: 1rem;
+  padding: 20px;
+}
+.tvShowCard__header__img {
+  width: 80px;
+  height: 112px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+.tvShowCard__header__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.tvShowCard__header__info__name {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+}
+.tvShowCard__header__info__genres {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0;
+}
+.tvShowCard__header__info__genres__genre {
+  background-color: #7A9080;
+  color: #F6F3EA;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+  margin: 4px 0;
+}
+.tvShowCard__header__info__subinfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  gap: 1rem;
+}
+.tvShowCard__header__info__subinfo__channel, .tvShowCard__header__info__subinfo__year {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #7A8899;
+}
+.tvShowCard__header__info__rating {
+  margin: 0;
+  font-size: 0.9rem;
+}
+.tvShowCard__description {
+  border-top: 1px solid #C2CDD5;
+  padding: 16px 20px;
+}
+.tvShowCard__description__txt {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
 body {
   width: 100%;
   margin: 0;
