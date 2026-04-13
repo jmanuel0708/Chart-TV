@@ -1,4 +1,5 @@
-const showsGrid = document.querySelector(".tvShowGrid"); 
+const showsGrid = document.querySelector(".tvShowGrid");
+const recommendedTvShows = [44458, 58323, 49, 80, 2993]
 
 const createShowCard = (show) => {
     
@@ -72,9 +73,6 @@ const createShowCard = (show) => {
     summary.textContent = showSummary;
     summaryDiv.appendChild(summary);
 }
-
-const recommendedTvShows = [44458, 58323, 49, 80, 2993]
-
 
 const loadTvShows = async () => {
     for (const id of recommendedTvShows) {
