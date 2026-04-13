@@ -70,8 +70,32 @@ main {
             right: 0;
             width: 80px;
             height: 100%;
-            background: linear-gradient(to right, transparent, v.$ivoryWarm);
+            background: linear-gradient(to right, transparent, #F6F3EA);
             pointer-events: none;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 100%;
+            background: linear-gradient(to left, transparent, #F6F3EA);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        &.hide-right::after {
+            opacity: 0;
+        }
+
+        &.show-left::before {
+            opacity: 1;
         }
     }
     

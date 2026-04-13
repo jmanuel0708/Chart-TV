@@ -151,4 +151,25 @@ main {
   height: 100%;
   background: linear-gradient(to right, transparent, #F6F3EA);
   pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.tvShowGrid__wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 100%;
+  background: linear-gradient(to left, transparent, #F6F3EA);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+.tvShowGrid__wrapper.hide-right::after {
+  opacity: 0;
+}
+.tvShowGrid__wrapper.show-left::before {
+  opacity: 1;
 }/*# sourceMappingURL=main.css.map */

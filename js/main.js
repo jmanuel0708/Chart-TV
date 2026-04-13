@@ -1,6 +1,16 @@
 const showsGrid = document.querySelector(".tvShowGrid");
 const recommendedTvShows = [44458, 58323, 49, 80, 2993]
 
+const handleGridGradients = () => {
+    const grid = document.querySelector(".tvShowGrid");
+    const wrapper = document.querySelector(".tvShowGrid__wrapper");
+
+    const atStart = grid.scrollLeft === 0;
+    const atEnd = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 1;
+
+    wrapper.classList.toggle("hide-right", atEnd);
+    wrapper.classList.toggle("show-left", !atStart);
+}
 const createShowCard = (show) => {
     
     const showName    = show.name;
@@ -110,6 +120,7 @@ const searchTvShows = async () => {
 }
 
 document.addEventListener("DOMContentLoaded",loadTvShows);
+document.querySelector(".tvShowGrid").addEventListener("scroll", handleGridGradients);
 document.querySelector(".header__searchbar__search").addEventListener("click", searchTvShows);
 document.getElementById("shows-search").addEventListener("keypress", function (e) {
     if (e.key == "Enter") {
