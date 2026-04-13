@@ -147,7 +147,7 @@ main {
   position: absolute;
   top: 0;
   right: 0;
-  width: 80px;
+  width: 150px;
   height: 100%;
   background: linear-gradient(to right, transparent, #F6F3EA);
   pointer-events: none;
@@ -159,7 +159,7 @@ main {
   position: absolute;
   top: 0;
   left: 0;
-  width: 80px;
+  width: 150px;
   height: 100%;
   background: linear-gradient(to left, transparent, #F6F3EA);
   pointer-events: none;
