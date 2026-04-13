@@ -73,7 +73,7 @@
         border-top: 1px solid v.$silverMist;
         padding: 16px 20px;
         max-height: 75px;
-        overflow-y: scroll;
+        @include m.hideScrollbar();
 
         &__txt {
             margin: 0;

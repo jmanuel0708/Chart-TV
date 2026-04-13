@@ -58,5 +58,5 @@ main {
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 1rem;
-    overflow-x: scroll;
+    @include m.hideScrollbar();
 }

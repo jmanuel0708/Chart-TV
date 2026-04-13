@@ -6,3 +6,13 @@
         transform: scale(1.05);
     }
 }
+
+@mixin hideScrollbar {
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

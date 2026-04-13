@@ -61,7 +61,12 @@
   border-top: 1px solid #C2CDD5;
   padding: 16px 20px;
   max-height: 75px;
-  overflow-y: scroll;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.tvShowCard__description::-webkit-scrollbar {
+  display: none;
 }
 .tvShowCard__description__txt {
   margin: 0;
@@ -127,5 +132,10 @@ main {
   flex-direction: row;
   flex-wrap: nowrap;
   gap: 1rem;
-  overflow-x: scroll;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.tvShowGrid::-webkit-scrollbar {
+  display: none;
 }/*# sourceMappingURL=main.css.map */
