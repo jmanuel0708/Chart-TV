@@ -1,0 +1,79 @@
+const createShowCard = (show) => {
+    const card = document.createElement("div");
+    card.classList.add("tvShowCard");
+
+}
+
+const showsGrid = document.querySelector(".tvShowGrid");
+
+const showName = "Ted Lasso";
+const showImg = "https://static.tvmaze.com/uploads/images/original_untouched/457/1142533.jpg";
+const genres = ["Drama", "Comedy", "Sports"];
+const showChannel = "Apple TV";
+const showYear = "2020";
+const showRating = 8.1;
+const showSummary = "Ted Lasso sigue a un entrenador idealista de fútbol americano contratado para dirigir un club de fútbol inglés, a pesar de no tener experiencia.";
+
+
+
+const card = document.createElement("article");
+card.classList.add("tvShowCard")
+showsGrid.appendChild(card);
+
+const headerDiv = document.createElement("div");
+headerDiv.classList.add("tvShowCard__header");
+card.appendChild(headerDiv);
+
+const cover = document.createElement("img");
+cover.classList.add("tvShowCard__header__img");
+cover.src = showImg
+cover.alt = showName
+headerDiv.appendChild(cover);
+
+const infoDiv = document.createElement("div");
+infoDiv.classList.add("tvShowCard__header__info");
+headerDiv.appendChild(infoDiv);
+
+const title = document.createElement("h2");
+title.classList.add("tvShowCard__header__info__name")
+title.textContent = showName;
+infoDiv.appendChild(title);
+
+const genresDiv = document.createElement("div");
+genresDiv.classList.add("tvShowCard__header__info__genres");
+infoDiv.appendChild(genresDiv);
+
+genres.forEach((genreInShow) => {
+    const genre = document.createElement("p");
+    genre.classList.add("tvShowCard__header__info__genres__genre");
+    genre.textContent = genreInShow;
+    genresDiv.appendChild(genre);
+})
+
+const subinfoDiv = document.createElement("div");
+subinfoDiv.classList.add("tvShowCard__header__info__subinfo");
+infoDiv.appendChild(subinfoDiv);
+
+const channel = document.createElement("p");
+channel.classList.add("tvShowCard__header__info__subinfo__channel");
+channel.textContent = showChannel;
+subinfoDiv.appendChild(channel);
+
+const year = document.createElement("p");
+year.classList.add("tvShowCard__header__info__subinfo__year");
+year.textContent = showYear;
+subinfoDiv.appendChild(year);
+
+const rating = document.createElement("p");
+rating.classList.add("tvShowCard__header__info__rating");
+rating.textContent = `⭐ ${showRating} / 10`;
+infoDiv.appendChild(rating);
+
+const summaryDiv = document.createElement("div");
+summaryDiv.classList.add("tvShowCard__description");
+card.appendChild(summaryDiv);
+
+const summary = document.createElement("p");
+summary.classList.add("tvShowCard__description__txt");
+summary.textContent = showSummary;
+summaryDiv.appendChild(summary);
