@@ -1,4 +1,5 @@
 const showsGrid = document.querySelector(".tvShowGrid");
+const sectionTitle = document.querySelector(".sectionTitle__txt");
 const recommendedTvShows = [44458, 58323, 49, 80, 2993]
 
 const handleGridGradients = () => {
@@ -10,7 +11,8 @@ const handleGridGradients = () => {
 
     wrapper.classList.toggle("hide-right", atEnd);
     wrapper.classList.toggle("show-left", !atStart);
-}
+};
+
 const createShowCard = (show) => {
     
     const showName    = show.name;
@@ -53,7 +55,7 @@ const createShowCard = (show) => {
         genre.classList.add("tvShowCard__header__info__genres__genre");
         genre.textContent = genreInShow;
         genresDiv.appendChild(genre);
-    })
+    });
 
     const subinfoDiv = document.createElement("div");
     subinfoDiv.classList.add("tvShowCard__header__info__subinfo");
@@ -82,7 +84,35 @@ const createShowCard = (show) => {
     summary.classList.add("tvShowCard__description__txt");
     summary.textContent = showSummary;
     summaryDiv.appendChild(summary);
-}
+};
+
+const createReturnBtn = () => {
+    const returnToMain = () => {
+        showsGrid.innerHTML = '';
+        loadTvShows();
+        sectionTitle.textContent = "Results";
+        returnBtn.remove();
+    }
+    const sectionTitleDiv = document.querySelector(".sectionTitle");
+    
+    const returnBtn = document.createElement("div");
+    returnBtn.classList.add("sectionTitle__return");
+    sectionTitleDiv.appendChild(returnBtn);
+    
+    const returnImg = document.createElement("img");
+    returnImg.classList.add("sectionTitle__return__img");
+    returnImg.src = "img/icons/back.svg";
+    returnImg.alt = "Return";
+    returnBtn.appendChild(returnImg);
+
+    const returnTxt = document.createElement("p");
+    returnTxt.classList.add("sectionTitle__return__txt");
+    returnTxt.textContent = "Return";
+    returnBtn.appendChild(returnTxt);
+    returnBtn.addEventListener("click", returnToMain);
+};     
+
+
 
 const loadTvShows = async () => {
     for (const id of recommendedTvShows) {
@@ -100,19 +130,21 @@ const loadTvShows = async () => {
 
 const searchTvShows = async () => {
     const showName = document.getElementById("shows-search").value;
-    const sectionTitle = document.querySelector(".sectionTitle");
+    
 
     try {
         const response = await axios.get(`https://api.tvmaze.com/search/shows?q=${showName}`);
         const shows = response.data;
         showsGrid.innerHTML = '';
-        sectionTitle.textContent = "Results"
+        sectionTitle.textContent = "Results";
 
         shows.forEach((result) => {
             const show = result.show;
 
             createShowCard(show);
         })
+
+        createReturnBtn();
 
     } catch(error) {
         console.log(`Error al buscar el show ${showName}:`, error.message);
@@ -127,3 +159,5 @@ document.getElementById("shows-search").addEventListener("keypress", function (e
         searchTvShows();
     }
 });
+
+ 
