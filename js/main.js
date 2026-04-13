@@ -94,22 +94,25 @@ const createReturnBtn = () => {
         returnBtn.remove();
     }
     const sectionTitleDiv = document.querySelector(".sectionTitle");
-    
-    const returnBtn = document.createElement("div");
-    returnBtn.classList.add("sectionTitle__return");
-    sectionTitleDiv.appendChild(returnBtn);
-    
-    const returnImg = document.createElement("img");
-    returnImg.classList.add("sectionTitle__return__img");
-    returnImg.src = "img/icons/back.svg";
-    returnImg.alt = "Return";
-    returnBtn.appendChild(returnImg);
+    const existingBtn = document.querySelector(".sectionTitle__return");
 
-    const returnTxt = document.createElement("p");
-    returnTxt.classList.add("sectionTitle__return__txt");
-    returnTxt.textContent = "Return";
-    returnBtn.appendChild(returnTxt);
-    returnBtn.addEventListener("click", returnToMain);
+    if (!existingBtn) {
+        const returnBtn = document.createElement("div");
+        returnBtn.classList.add("sectionTitle__return");
+        sectionTitleDiv.appendChild(returnBtn);
+        
+        const returnImg = document.createElement("img");
+        returnImg.classList.add("sectionTitle__return__img");
+        returnImg.src = "img/icons/back.svg";
+        returnImg.alt = "Return";
+        returnBtn.appendChild(returnImg);
+
+        const returnTxt = document.createElement("p");
+        returnTxt.classList.add("sectionTitle__return__txt");
+        returnTxt.textContent = "Return";
+        returnBtn.appendChild(returnTxt);
+        returnBtn.addEventListener("click", returnToMain);
+    };
 };     
 
 
