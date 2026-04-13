@@ -2,7 +2,7 @@
   margin: 10px 0;
   min-width: 350px;
   max-width: 480px;
-  border: 1px solid #C2CDD5;
+  border: 1px solid #c2cdd5;
   border-radius: 12px;
   overflow: hidden;
   background-color: #ffffff;
@@ -64,7 +64,7 @@
   font-size: 0.9rem;
 }
 .tvShowCard__description {
-  border-top: 1px solid #C2CDD5;
+  border-top: 1px solid #c2cdd5;
   padding: 16px 20px;
   max-height: 75px;
   overflow: auto;
@@ -134,11 +134,34 @@ main {
 }
 
 .sectionTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 1rem;
+}
+.sectionTitle__txt {
   font-size: 1.75rem;
   width: -moz-fit-content;
   width: fit-content;
   border-bottom: 2px solid #303854;
   padding: 0.5rem;
+}
+.sectionTitle__return {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+.sectionTitle__return__img {
+  width: 16px;
+}
+.sectionTitle__return__txt {
+  color: #7A8899;
+  font-size: 0.75rem;
+  margin: 0;
 }
 
 .tvShowGrid {

@@ -54,10 +54,38 @@ main {
 }
 
 .sectionTitle {
-    font-size: 1.75rem;
-    width: fit-content;
-    border-bottom: 2px solid v.$deepNavy;
-    padding: .5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 1rem;
+    
+    &__txt {
+        font-size: 1.75rem;
+        width: fit-content;
+        border-bottom: 2px solid v.$deepNavy;
+        padding: .5rem;
+    }
+
+    &__return {
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        gap: .25rem;
+        cursor: pointer;
+
+        &__img {
+            width: 16px;
+        }
+
+        &__txt {
+            color: v.$ashGray;
+            font-size: .75rem;
+            margin: 0;
+        }
+
+    }
 }
 
 .tvShowGrid {
