@@ -100,19 +100,19 @@ const loadTvShows = async () => {
 
 const searchTvShows = async () => {
     const showName = document.getElementById("shows-search").value;
+    const sectionTitle = document.querySelector(".sectionTitle");
+
     try {
         const response = await axios.get(`https://api.tvmaze.com/search/shows?q=${showName}`);
         const shows = response.data;
         showsGrid.innerHTML = '';
+        sectionTitle.textContent = "Results"
 
         shows.forEach((result) => {
             const show = result.show;
 
             createShowCard(show);
         })
-
-        
-
 
     } catch(error) {
         console.log(`Error al buscar el show ${showName}:`, error.message);
