@@ -11,6 +11,10 @@ body {
     font-weight: 400;
 }
 
+main {
+    margin: .5rem;
+}
+
 .header {
     display: flex;
     flex-direction: row;
@@ -50,5 +54,9 @@ body {
 }
 
 .tvShowGrid {
-    margin: .5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    overflow-x: scroll;
 }

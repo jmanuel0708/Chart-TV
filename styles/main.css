@@ -1,4 +1,5 @@
 .tvShowCard {
+  min-width: 350px;
   max-width: 480px;
   border: 1px solid #C2CDD5;
   border-radius: 12px;
@@ -6,6 +7,7 @@
   background-color: #ffffff;
 }
 .tvShowCard__header {
+  min-height: 150px;
   display: flex;
   gap: 1rem;
   padding: 20px;
@@ -58,6 +60,8 @@
 .tvShowCard__description {
   border-top: 1px solid #C2CDD5;
   padding: 16px 20px;
+  max-height: 75px;
+  overflow-y: scroll;
 }
 .tvShowCard__description__txt {
   margin: 0;
@@ -71,6 +75,10 @@ body {
   font-family: "Lato", sans-serif;
   color: #303854;
   font-weight: 400;
+}
+
+main {
+  margin: 0.5rem;
 }
 
 .header {
@@ -115,5 +123,9 @@ body {
 }
 
 .tvShowGrid {
-  margin: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  overflow-x: scroll;
 }/*# sourceMappingURL=main.css.map */
