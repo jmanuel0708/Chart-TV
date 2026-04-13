@@ -3,12 +3,18 @@
 @use "./extends" as e;
 
 .tvShowCard {
+    margin: 10px 0;
     min-width: 350px;
     max-width: 480px;
     border: 1px solid v.$silverMist;
     border-radius: 12px;
     overflow: hidden;
     background-color: v.$white;
+    transition: transform .25s ease-in-out;
+
+    &:hover {
+        transform: translateY(-6px);
+    }
 
     &__header {
         min-height: 150px;

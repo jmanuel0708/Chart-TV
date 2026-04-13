@@ -1,10 +1,15 @@
 .tvShowCard {
+  margin: 10px 0;
   min-width: 350px;
   max-width: 480px;
   border: 1px solid #C2CDD5;
   border-radius: 12px;
   overflow: hidden;
   background-color: #ffffff;
+  transition: transform 0.25s ease-in-out;
+}
+.tvShowCard:hover {
+  transform: translateY(-6px);
 }
 .tvShowCard__header {
   min-height: 150px;
@@ -125,6 +130,14 @@ main {
 }
 .header__searchbar__search:hover {
   transform: scale(1.05);
+}
+
+.sectionTitle {
+  font-size: 1.75rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-bottom: 2px solid #303854;
+  padding: 0.5rem;
 }
 
 .tvShowGrid {
