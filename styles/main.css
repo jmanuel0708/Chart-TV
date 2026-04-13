@@ -111,4 +111,8 @@ body {
 }
 .header__searchbar__search:hover {
   transform: scale(1.05);
+}
+
+.tvShowGrid {
+  margin: 0.5rem;
 }/*# sourceMappingURL=main.css.map */
