@@ -90,14 +90,14 @@ const createReturnBtn = () => {
     const returnToMain = () => {
         showsGrid.innerHTML = '';
         loadTvShows();
-        sectionTitle.textContent = "Results";
+        sectionTitle.textContent = "Top Picks";
         returnBtn.remove();
     }
     const sectionTitleDiv = document.querySelector(".sectionTitle");
     const existingBtn = document.querySelector(".sectionTitle__return");
+    const returnBtn = document.createElement("div");
 
     if (!existingBtn) {
-        const returnBtn = document.createElement("div");
         returnBtn.classList.add("sectionTitle__return");
         sectionTitleDiv.appendChild(returnBtn);
         
@@ -111,8 +111,9 @@ const createReturnBtn = () => {
         returnTxt.classList.add("sectionTitle__return__txt");
         returnTxt.textContent = "Return";
         returnBtn.appendChild(returnTxt);
-        returnBtn.addEventListener("click", returnToMain);
     };
+
+    returnBtn.addEventListener("click", returnToMain);
 };     
 
 
