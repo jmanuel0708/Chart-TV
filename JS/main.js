@@ -88,4 +88,31 @@ const loadTvShows = async () => {
     };
 };
 
+const searchTvShows = async () => {
+    const showName = document.getElementById("shows-search").value;
+    try {
+        const response = await axios.get(`https://api.tvmaze.com/search/shows?q=${showName}`);
+        const shows = response.data;
+        showsGrid.innerHTML = '';
+
+        shows.forEach((result) => {
+            const show = result.show;
+
+            createShowCard(show);
+        })
+
+        
+
+
+    } catch(error) {
+        console.log(`Error al buscar el show ${showName}:`, error.message);
+    };
+}
+
 document.addEventListener("DOMContentLoaded",loadTvShows);
+document.querySelector(".header__searchbar__search").addEventListener("click", searchTvShows);
+document.getElementById("shows-search").addEventListener("keypress", function (e) {
+    if (e.key == "Enter") {
+        searchTvShows();
+    }
+})
