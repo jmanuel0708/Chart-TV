@@ -3,6 +3,7 @@
   border: 1px solid #C2CDD5;
   border-radius: 12px;
   overflow: hidden;
+  background-color: #ffffff;
 }
 .tvShowCard__header {
   display: flex;
