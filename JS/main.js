@@ -115,4 +115,4 @@ document.getElementById("shows-search").addEventListener("keypress", function (e
     if (e.key == "Enter") {
         searchTvShows();
     }
-})
+});
