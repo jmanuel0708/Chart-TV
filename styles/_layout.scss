@@ -25,30 +25,67 @@ main {
 
     &__menu {
         @include m.icon();
+        opacity: .75;
     }
 
     &__logo {
-        width: 75px;
+        width: 55px;
         padding: .5rem;
         border-radius: .5rem;
     }
 
     &__searchbar {
         display: flex;
-        direction: row;
-        gap: 10px;
+        flex-direction: row;
+        background-color: rgba(v.$ivoryWarm,.15);
+        border-radius: 50px;
+        border: 1px solid rgba(v.$ivoryWarm,.25);
+        overflow: hidden;
         
-        input {
-            padding: .5rem 1rem;
+        &__search {
+            @include m.icon();
+            padding: 8px;
+            width: 16px;
+        }
+
+        &__input {
+            padding: .5rem 0;
             width: 250px;
             height: 20px;
             border: none;
-            border-radius: 50px;
             font-size: .80rem;
-        }
+            font-weight: 500;
+            color: v.$ivoryWarm;
+            background-color: transparent;
 
-        &__search {
-            @include m.icon();
+            // &--show {
+            //     padding: .5rem 0;
+            //     width: 250px;
+            //     opacity: 1;
+            // }
+
+            @include m.mobile() {
+                width: 0;
+                opacity: 0;
+                padding: 0;
+                transition: width 0.3s ease, opacity 0.3s ease;
+
+                &--show {
+                    width: 200px;
+                    opacity: 1;
+                    padding: .5rem 0;
+                }
+            }
+
+
+
+             &:focus {
+                outline: none;
+            }
+
+            &::placeholder {
+                font-weight: 400;
+            }
         }
     }
 }

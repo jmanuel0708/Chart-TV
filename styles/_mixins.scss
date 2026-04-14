@@ -1,3 +1,15 @@
+@mixin mobile {
+    @media screen and (max-width: 46rem) {@content}
+};
+
+@mixin tablet {
+    @media screen and (min-width: 46rem) {@content}
+};
+
+@mixin laptop {
+    @media screen and (min-width: 64rem) {@content}
+};
+
 @mixin icon {
     cursor: pointer;
     transition: transform 0.2s ease;

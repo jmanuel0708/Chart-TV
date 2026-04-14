@@ -107,23 +107,21 @@ main {
 .header__menu:hover {
   transform: scale(1.05);
 }
+.header__menu {
+  opacity: 0.75;
+}
 .header__logo {
-  width: 75px;
+  width: 55px;
   padding: 0.5rem;
   border-radius: 0.5rem;
 }
 .header__searchbar {
   display: flex;
-  direction: row;
-  gap: 10px;
-}
-.header__searchbar input {
-  padding: 0.5rem 1rem;
-  width: 250px;
-  height: 20px;
-  border: none;
+  flex-direction: row;
+  background-color: rgba(246, 243, 234, 0.15);
   border-radius: 50px;
-  font-size: 0.8rem;
+  border: 1px solid rgba(246, 243, 234, 0.25);
+  overflow: hidden;
 }
 .header__searchbar__search {
   cursor: pointer;
@@ -131,6 +129,42 @@ main {
 }
 .header__searchbar__search:hover {
   transform: scale(1.05);
+}
+.header__searchbar__search {
+  padding: 8px;
+  width: 16px;
+}
+.header__searchbar__input {
+  padding: 0.5rem 0;
+  width: 250px;
+  height: 20px;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #F6F3EA;
+  background-color: transparent;
+}
+@media screen and (max-width: 46rem) {
+  .header__searchbar__input {
+    width: 0;
+    opacity: 0;
+    padding: 0;
+    transition: width 0.3s ease, opacity 0.3s ease;
+  }
+  .header__searchbar__input--show {
+    width: 200px;
+    opacity: 1;
+    padding: 0.5rem 0;
+  }
+}
+.header__searchbar__input:focus {
+  outline: none;
+}
+.header__searchbar__input::-moz-placeholder {
+  font-weight: 400;
+}
+.header__searchbar__input::placeholder {
+  font-weight: 400;
 }
 
 .sectionTitle {

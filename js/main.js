@@ -1,6 +1,6 @@
 const showsGrid = document.querySelector(".tvShowGrid");
 const sectionTitle = document.querySelector(".sectionTitle__txt");
-const recommendedTvShows = [44458, 58323, 49, 80, 2993]
+const recommendedTvShows = [44458, 58323, 49, 80, 2993];
 
 const handleGridGradients = () => {
     const grid = document.querySelector(".tvShowGrid");
@@ -114,9 +114,33 @@ const createReturnBtn = () => {
     };
 
     returnBtn.addEventListener("click", returnToMain);
-};     
+};
 
+const searchbar = document.querySelector(".header__searchbar")
+const searchIcon = document.querySelector(".header__searchbar__search");
+const searchInput = document.getElementById("shows-search");
+const isMobile = () => window.matchMedia("(max-width: 46rem)").matches;
 
+searchIcon.addEventListener("click", () => {
+    if (isMobile()) {
+        if (searchInput.classList.contains("header__searchbar__input--show")) {
+            searchTvShows();
+        } else {
+            searchInput.classList.add("header__searchbar__input--show");
+            searchInput.focus();
+        }
+    } else {
+        searchTvShows();
+    }
+});
+
+searchInput.addEventListener("blur", () => {
+    if (isMobile()) {
+        setTimeout(() => {
+            searchInput.classList.remove("header__searchbar__input--show");
+        }, 150);
+    }
+});
 
 const loadTvShows = async () => {
     for (const id of recommendedTvShows) {
@@ -157,7 +181,6 @@ const searchTvShows = async () => {
 
 document.addEventListener("DOMContentLoaded",loadTvShows);
 document.querySelector(".tvShowGrid").addEventListener("scroll", handleGridGradients);
-document.querySelector(".header__searchbar__search").addEventListener("click", searchTvShows);
 document.getElementById("shows-search").addEventListener("keypress", function (e) {
     if (e.key == "Enter") {
         searchTvShows();
