@@ -184,6 +184,9 @@ document.querySelector(".tvShowGrid").addEventListener("scroll", handleGridGradi
 document.getElementById("shows-search").addEventListener("keypress", function (e) {
     if (e.key == "Enter") {
         searchTvShows();
+        if (isMobile()) {
+            searchInput.classList.remove("header__searchbar__input--show");
+        }
     }
 });
 
