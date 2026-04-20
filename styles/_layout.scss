@@ -146,6 +146,10 @@ main {
             pointer-events: none;
             opacity: 1;
             transition: opacity 0.3s ease;
+
+            @include m.mobile() {
+                width: 75px;
+            }
         }
 
         &::before {
@@ -160,6 +164,10 @@ main {
             opacity: 0;
             transition: opacity 0.3s ease;
             z-index: 1;
+
+            @include m.mobile() {
+                width: 75px;
+            }
         }
 
         &.hide-right::after {

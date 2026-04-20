@@ -225,6 +225,11 @@ main {
   opacity: 1;
   transition: opacity 0.3s ease;
 }
+@media screen and (max-width: 46rem) {
+  .tvShowGrid__wrapper::after {
+    width: 75px;
+  }
+}
 .tvShowGrid__wrapper::before {
   content: "";
   position: absolute;
@@ -237,6 +242,11 @@ main {
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 1;
+}
+@media screen and (max-width: 46rem) {
+  .tvShowGrid__wrapper::before {
+    width: 75px;
+  }
 }
 .tvShowGrid__wrapper.hide-right::after {
   opacity: 0;
