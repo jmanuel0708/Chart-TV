@@ -157,7 +157,7 @@ const loadTvShows = async () => {
 };
 
 const searchTvShows = async () => {
-    const showName = document.getElementById("shows-search").value;
+    const showName = searchInput.value;
     
 
     try {
@@ -173,6 +173,7 @@ const searchTvShows = async () => {
         })
 
         createReturnBtn();
+        searchInput.value = "";
 
     } catch(error) {
         console.log(`Error al buscar el show ${showName}:`, error.message);
@@ -181,7 +182,7 @@ const searchTvShows = async () => {
 
 document.addEventListener("DOMContentLoaded",loadTvShows);
 document.querySelector(".tvShowGrid").addEventListener("scroll", handleGridGradients);
-document.getElementById("shows-search").addEventListener("keypress", function (e) {
+searchInput.addEventListener("keypress", function (e) {
     if (e.key == "Enter") {
         searchTvShows();
         if (isMobile()) {
