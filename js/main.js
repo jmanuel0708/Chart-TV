@@ -186,8 +186,7 @@ document.getElementById("shows-search").addEventListener("keypress", function (e
         searchTvShows();
         if (isMobile()) {
             searchInput.classList.remove("header__searchbar__input--show");
+            searchInput.blur();
         }
     }
 });
-
- 
